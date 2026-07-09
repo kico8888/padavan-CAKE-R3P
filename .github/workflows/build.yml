@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
 
     - name: Install Dependencies
       run: |
@@ -33,7 +33,7 @@ jobs:
         fakeroot ./build_firmware.sh MI-R3P
 
     - name: Upload Firmware
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: MI-R3P-CAKE
         path: trunk/images/*.trx
