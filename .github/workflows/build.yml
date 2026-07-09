@@ -37,7 +37,7 @@ jobs:
         fakeroot ./build_firmware.sh MI-R3P
 
     - name: Upload Firmware
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: MI-R3P-firmware
         path: padavan-4.4/trunk/images/*.trx
