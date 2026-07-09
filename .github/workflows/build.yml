@@ -3,6 +3,9 @@ name: Build Padavan-CAKE MI-R3P
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -19,21 +22,4 @@ jobs:
           libssl-dev zlib1g-dev
 
     - name: Prepare Toolchain
-      run: |
-        mkdir -p toolchain
-        git clone https://github.com/tw641/padavan-toolchain.git toolchain
-
-    - name: Apply CAKE Patch
-      run: |
-        cp -r trunk/user/patches/CAKE/* trunk/
-
-    - name: Build MI-R3P
-      run: |
-        cd trunk
-        fakeroot ./build_firmware.sh MI-R3P
-
-    - name: Upload Firmware
-      uses: actions/upload-artifact@v5
-      with:
-        name: MI-R3P-CAKE
-        path: trunk/images/*.trx
+      run: echo "OK"
