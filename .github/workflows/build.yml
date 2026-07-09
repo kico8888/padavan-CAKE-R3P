@@ -25,7 +25,7 @@ jobs:
       run: |
         git clone https://github.com/hanwckf/padavan-4.4.git
         cd padavan-4.4
-        git checkout master
+        git checkout 4.4
 
     - name: Prepare Toolchain
       run: |
@@ -34,7 +34,6 @@ jobs:
 
     - name: Copy MI-R3P Config
       run: |
-        # 確保 MI-R3P.config 在你自己的 repo 根目錄
         cp MI-R3P.config padavan-4.4/trunk/configs/templates/MI-R3P.config
 
     - name: Build Firmware
