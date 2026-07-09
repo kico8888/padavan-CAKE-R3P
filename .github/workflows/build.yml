@@ -27,8 +27,8 @@ jobs:
 
     - name: Prepare Toolchain
       run: |
-        cd padavan-4.4
-        ./dl_toolchain.sh
+        cd padavan-4.4/toolchain-mipsel
+        sh dl_toolchain.sh
 
     - name: Copy MI-R3P Config
       run: |
