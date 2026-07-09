@@ -23,9 +23,7 @@ jobs:
 
     - name: Clone Padavan-CAKE
       run: |
-        git clone https://github.com/hanwckf/padavan-4.4.git
-        cd padavan-4.4
-        git checkout 4.4
+        git clone --depth 1 https://github.com/hanwckf/padavan-4.4.git
 
     - name: Prepare Toolchain
       run: |
