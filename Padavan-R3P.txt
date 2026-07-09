@@ -1,0 +1,26 @@
+padavan-CAKE-R3P/
+│
+├── trunk/
+│   ├── config/
+│   │   ├── MI-R3P.config
+│   │   └── base.config
+│   │
+│   ├── user/
+│   │   ├── patches/
+│   │   │   └── CAKE/
+│   │   └── l10n/
+│   │       └── zh_TW/
+│   │
+│   ├── linux-3.4.x/
+│   │   ├── arch/mips/...
+│   │   └── MI-R3P.dts
+│   │
+│   └── shared/
+│       └── MI-R3P/
+│           ├── board.h
+│           ├── partitions.h
+│           └── kernel.config
+│
+└── .github/
+    └── workflows/
+        └── build.yml
