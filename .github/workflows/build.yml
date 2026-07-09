@@ -25,7 +25,7 @@ jobs:
       run: |
         git clone https://github.com/hanwckf/padavan-4.4.git
         cd padavan-4.4
-        git checkout master
+        git checkout main
 
     - name: Copy MI-R3P Config
       run: |
