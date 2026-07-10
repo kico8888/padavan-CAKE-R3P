@@ -1,4 +1,4 @@
-name: Build Padavan MI-R3P 4.4 zh-TW (Docker Safe)
+name: Build Padavan MI-R3P 4.4 zh-TW (Ubuntu 14.04 Docker)
 
 on:
   workflow_dispatch:
@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout your repo (host)
+    - name: Checkout repo (host)
       uses: actions/checkout@v4
 
     - name: Build Padavan inside Docker
