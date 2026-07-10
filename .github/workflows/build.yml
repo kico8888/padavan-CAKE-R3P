@@ -11,10 +11,10 @@ jobs:
     - name: Checkout your repo
       uses: actions/checkout@v4
 
-    - name: Clone Padavan 4.4 source (099 compatible)
+    - name: Clone Padavan source (MI-R3P supported)
       run: |
-        git clone https://github.com/hanwckf/padavan-4.4.git padavan
-        ls -al padavan/trunk
+        git clone https://github.com/hanwckf/rt-n56u.git padavan
+        ls -al padavan/trunk/configs/boards
 
     - name: Copy your config + locale into Padavan source
       run: |
