@@ -8,13 +8,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout your repo
       uses: actions/checkout@v3
+
+    - name: Clone Padavan 4.4 source (099 compatible)
+      run: |
+        git clone https://github.com/hanwckf/padavan-4.4.git padavan
+
+    - name: Copy your config + locale into Padavan source
+      run: |
+        # 建立語系資料夾
+        mkdir -p padavan/trunk/user/www/locale/zh-TW/
+
+        # 複製你的繁體語系
+        cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
+
+        # 複製你的 099 config
+        cp MI-R3P_3.4.3.9-099.config padavan/trunk/configs/templates/
 
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y build-essential gawk git gettext libncurses5-dev libssl-dev xsltproc libxml2-utils python3
+        sudo apt install -y build-essential gawk git gettext \
+          libncurses5-dev libssl-dev xsltproc libxml2-utils python3
 
     - name: Clone toolchain
       run: |
@@ -23,12 +39,12 @@ jobs:
     - name: Build firmware
       run: |
         export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
-        cd trunk
+        cd padavan/trunk
         fakeroot ./build_firmware.sh MI-R3P_3.4.3.9-099.config
 
     - name: Upload firmware
       uses: actions/upload-artifact@v3
       with:
-        name: MI-R3P_3.4.3.9-099_zh-TW
-        path: trunk/images/*.trx
+        name: MI-R3P_099_zh-TW
+        path: padavan/trunk/images/*.trx
 
