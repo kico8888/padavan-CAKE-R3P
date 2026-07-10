@@ -17,13 +17,8 @@ jobs:
 
     - name: Copy your config + locale into Padavan source
       run: |
-        # 建立語系資料夾
         mkdir -p padavan/trunk/user/www/locale/zh-TW/
-
-        # 複製你的繁體語系
         cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
-
-        # 複製你的 099 config
         cp MI-R3P_3.4.3.9-099.config padavan/trunk/configs/templates/
 
     - name: Install dependencies
@@ -47,4 +42,3 @@ jobs:
       with:
         name: MI-R3P_099_zh-TW
         path: padavan/trunk/images/*.trx
-
