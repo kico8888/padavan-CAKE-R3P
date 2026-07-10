@@ -60,6 +60,23 @@ var menu = {
   "ipv6": "IPv6 設定",
   "vlan": "VLAN 設定",
   "mtu": "MTU 設定",
+  
+  // 隱藏 / 進階頁面入口
+  "wifi_advanced_24": "2.4GHz 高級設定",
+  "wifi_advanced_5": "5GHz 高級設定",
+
+  "traffic_monitor": "流量監控",
+  "nat_table": "NAT 表",
+  "conntrack": "連線追蹤",
+
+  "arp_table": "ARP 表",
+  "ndp_table": "NDP 表",
+
+  "ovpn_advanced": "OpenVPN 進階設定",
+  "usb_mount_info": "USB 掛載資訊",
+
+  "debug_tools": "系統工具",
+  "sys_status": "系統狀態"
 
   // 診斷工具
   "diag": "診斷工具",
