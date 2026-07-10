@@ -1,4 +1,4 @@
-name: Build Padavan MI-R3P 099 zh-TW
+name: Build Padavan MI-R3P 4.4 zh-TW
 
 on:
   workflow_dispatch:
@@ -11,16 +11,15 @@ jobs:
     - name: Checkout your repo
       uses: actions/checkout@v4
 
-    - name: Clone Padavan source (MI-R3P supported)
+    - name: Clone Padavan rt-n56u (MI-R3P supported)
       run: |
         git clone https://github.com/hanwckf/rt-n56u.git padavan
-        ls -al padavan/trunk/configs/boards
+        ls -al padavan/trunk/configs/templates
 
-    - name: Copy your config + locale into Padavan source
+    - name: Copy zh-TW locale into Padavan source
       run: |
         mkdir -p padavan/trunk/user/www/locale/zh-TW/
         cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
-        cp MI-R3P_3.4.3.9-099.config padavan/trunk/configs/templates/
 
     - name: Install dependencies
       run: |
@@ -32,15 +31,15 @@ jobs:
       run: |
         git clone https://github.com/hanwckf/padavan-toolchain.git toolchain
 
-    - name: Build firmware
+    - name: Build firmware (MI-R3P, Linux 4.4)
       run: |
         export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
         cd padavan/trunk
         ls -al
-        fakeroot ./build_firmware MI-R3P_3.4.3.9-099
+        fakeroot ./build_firmware MI-R3P
 
     - name: Upload firmware
       uses: actions/upload-artifact@v4
       with:
-        name: MI-R3P_099_zh-TW
+        name: MI-R3P_4.4_zh-TW
         path: padavan/trunk/images/*.trx
