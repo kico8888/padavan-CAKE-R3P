@@ -135,4 +135,95 @@ var lang = {
   "diag_start": "開始測試",
   "diag_result": "測試結果",
   "diag_tip": "診斷工具可協助確認網路連線是否正常。"
+    // 無線高級設定（2.4G / 5G）
+  "wifi_txpower": "發射功率",
+  "wifi_beacon": "Beacon 間隔",
+  "wifi_rts": "RTS 門檻",
+  "wifi_frag": "Fragment 門檻",
+  "wifi_dtim": "DTIM 間隔",
+  "wifi_wmm": "WMM QoS",
+  "wifi_isolation": "AP 隔離",
+  "wifi_hide_ssid": "隱藏 SSID",
+  "wifi_country": "國家/地區代碼",
+  "wifi_ampdu": "AMPDU 聚合",
+  "wifi_amsdu": "AMSDU 聚合",
+  "wifi_ldpc": "LDPC 編碼",
+  "wifi_stbc": "STBC 傳輸",
+  "wifi_mu_mimo": "MU‑MIMO",
+
+  // Traffic Monitor（流量監控）
+  "tm_title": "流量監控",
+  "tm_rx": "下載流量",
+  "tm_tx": "上傳流量",
+  "tm_total": "總流量",
+  "tm_speed": "即時速度",
+  "tm_reset": "重置統計",
+  "tm_tip": "流量監控可顯示每個裝置的即時與累積流量。",
+
+  // NAT / Conntrack（連線追蹤）
+  "nat_table": "NAT 表",
+  "conntrack": "連線追蹤",
+  "conntrack_count": "目前連線數",
+  "conntrack_max": "最大連線數",
+  "conntrack_refresh": "重新整理連線表",
+  "conntrack_tip": "連線追蹤可顯示目前所有 NAT 連線狀態。",
+
+  // ARP / NDP（IPv4 / IPv6 裝置表）
+  "arp_table": "ARP 表（IPv4）",
+  "ndp_table": "NDP 表（IPv6）",
+  "arp_ip": "IP 位址",
+  "arp_mac": "MAC 位址",
+  "arp_iface": "介面",
+  "arp_tip": "ARP 表顯示區域網路中裝置的 IPv4 與 MAC 對應。",
+  "ndp_tip": "NDP 表顯示 IPv6 裝置的鄰居資訊。",
+
+  // OpenVPN 進階設定
+  "ovpn_import": "匯入 .ovpn 設定檔",
+  "ovpn_cipher": "加密方式",
+  "ovpn_auth": "驗證方式",
+  "ovpn_tls": "TLS 設定",
+  "ovpn_ca": "CA 憑證",
+  "ovpn_cert": "用戶端憑證",
+  "ovpn_key": "用戶端金鑰",
+  "ovpn_status": "連線狀態",
+  "ovpn_log": "OpenVPN 日誌",
+  "ovpn_tip": "OpenVPN 支援匯入設定檔與手動設定憑證。",
+
+  // USB 掛載資訊（Mount Info）
+  "usb_mount_info": "掛載資訊",
+  "usb_mount_point": "掛載點",
+  "usb_device": "裝置名稱",
+  "usb_fs": "檔案系統",
+  "usb_size": "容量",
+  "usb_used": "已使用",
+  "usb_free": "可用空間",
+  "usb_mount_tip": "顯示 USB 儲存裝置的掛載狀態與容量資訊。",
+
+  // 系統 Debug / 工具頁面
+  "debug_tools": "系統工具",
+  "debug_iperf": "iPerf 測速",
+  "debug_nslookup": "DNS 查詢（nslookup）",
+  "debug_tcpdump": "封包擷取（tcpdump）",
+  "debug_proc": "系統狀態（/proc）",
+  "debug_sys": "系統參數（/sys）",
+  "debug_cmd": "執行指令",
+  "debug_output": "輸出結果",
+  "debug_tip": "系統工具可用於診斷網路與系統問題。",
+
+  // IPv6 進階設定
+  "ipv6_ra": "Router Advertisement (RA)",
+  "ipv6_dhcp6": "DHCPv6 設定",
+  "ipv6_prefix": "前綴位址",
+  "ipv6_pd": "Prefix Delegation",
+  "ipv6_ll": "Link‑Local 位址",
+  "ipv6_global": "Global IPv6 位址",
+  "ipv6_tip": "IPv6 進階設定適用於支援 IPv6 的 ISP 或進階網路架構。",
+
+  // 系統狀態（CPU / Memory / Process）
+  "sys_cpu": "CPU 狀態",
+  "sys_mem": "記憶體狀態",
+  "sys_process": "行程列表",
+  "sys_loadavg": "系統負載",
+  "sys_top": "行程監控",
+  "sys_tip": "系統狀態頁面可顯示 CPU、記憶體與行程資訊。"
 };
