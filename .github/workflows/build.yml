@@ -13,7 +13,7 @@ jobs:
 
     - name: Clone Padavan 4.4 builder (MI-R3P supported)
       run: |
-        git clone https://github.com/padavan-build/padavan-4.4.git padavan
+        git clone https://github.com/padavan-build/padavan-4.4-fork.git padavan
         ls -al padavan/trunk/configs/templates
 
     - name: Copy zh-TW locale into Padavan source
