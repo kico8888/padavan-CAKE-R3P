@@ -1,16 +1,16 @@
-FROM ubuntu:18.04
+FROM ubuntu:14.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install -y \
+RUN apt-get update && apt-get install -y \
     build-essential gawk git gettext \
-    libncurses5-dev libssl-dev xsltproc libxml2-utils python3 \
+    libncurses5-dev libssl-dev xsltproc libxml2-utils python2.7 \
     flex bison autoconf automake libtool pkg-config \
-    gcc-5 g++-5
+    gcc-4.8 g++-4.8
 
-# 使用 gcc-5（Padavan 4.4 相容）
-RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 50
-RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-5 50
+# 使用 gcc-4.8（Padavan 4.4 完整相容）
+RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
-# 建立工作目錄
 WORKDIR /workspace
+
