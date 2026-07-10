@@ -47,4 +47,31 @@ var help = {
   "sys_upgrade": "韌體升級可改善功能或修正問題。升級期間請勿關閉電源。",
   "sys_backup": "你可以備份目前設定，或還原到先前的設定檔。",
   "sys_reboot": "重新啟動路由器可解決部分網路問題。"
+
+    // 無線高級設定
+  "wifi_advanced_24": "2.4GHz 高級設定可調整發射功率、Beacon 間隔、RTS/Fragment 門檻等參數，以優化訊號品質與穩定度。",
+  "wifi_advanced_5": "5GHz 高級設定適用於高頻段連線，可依環境調整功率與進階參數以獲得最佳效能。",
+
+  // 流量監控
+  "traffic_monitor": "流量監控可顯示各裝置的即時與累積流量，適合用來觀察誰在大量使用頻寬。",
+
+  // NAT / Conntrack
+  "nat_table": "NAT 表顯示內部 IP 與外部連線的對應關係。",
+  "conntrack": "連線追蹤可顯示目前所有連線狀態，包含協定、來源與目的位址。",
+
+  // ARP / NDP
+  "arp_table": "ARP 表顯示 IPv4 裝置的 IP 與 MAC 對應，可用於排除區域網路問題。",
+  "ndp_table": "NDP 表顯示 IPv6 裝置的鄰居資訊，適用於啟用 IPv6 的環境。",
+
+  // OpenVPN 進階設定
+  "ovpn_advanced": "OpenVPN 進階設定可調整加密方式、驗證方式與憑證檔案，適合需要高安全性的遠端連線。",
+
+  // USB 掛載資訊
+  "usb_mount_info": "USB 掛載資訊顯示儲存裝置的掛載點、檔案系統與容量使用狀況。",
+
+  // 系統工具 / Debug
+  "debug_tools": "系統工具提供 iPerf、nslookup、tcpdump 等進階診斷功能，適合熟悉網路與系統的使用者。",
+
+  // 系統狀態
+  "sys_status": "系統狀態頁面可顯示 CPU 使用率、記憶體占用與行程列表，有助於排除效能問題。"
 };
