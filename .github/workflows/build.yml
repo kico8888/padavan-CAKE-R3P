@@ -14,6 +14,7 @@ jobs:
     - name: Clone Padavan 4.4 source (099 compatible)
       run: |
         git clone https://github.com/hanwckf/padavan-4.4.git padavan
+        ls -al padavan/trunk
 
     - name: Copy your config + locale into Padavan source
       run: |
@@ -35,6 +36,7 @@ jobs:
       run: |
         export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
         cd padavan/trunk
+        ls -al
         fakeroot ./build_firmware.sh MI-R3P_3.4.3.9-099.config
 
     - name: Upload firmware
