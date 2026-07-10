@@ -1,4 +1,4 @@
-name: Build Padavan MI-R3P 4.4 zh-TW
+name: Build Padavan MI-R3P 4.4 zh-TW (Docker)
 
 on:
   workflow_dispatch:
@@ -6,6 +6,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: padavan/padavan-build:latest
 
     steps:
     - name: Checkout your repo
@@ -21,19 +23,8 @@ jobs:
         mkdir -p padavan/trunk/user/www/locale/zh-TW/
         cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
 
-    - name: Install dependencies
-      run: |
-        sudo apt update
-        sudo apt install -y build-essential gawk git gettext \
-          libncurses5-dev libssl-dev xsltproc libxml2-utils python3 flex bison
-
-    - name: Clone toolchain
-      run: |
-        git clone https://github.com/hanwckf/padavan-toolchain.git toolchain
-
     - name: Build firmware (MI-R3P, Linux 4.4)
       run: |
-        export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
         cd padavan/trunk
         fakeroot ./build_firmware MI-R3P
 
