@@ -11,9 +11,9 @@ jobs:
     - name: Checkout your repo
       uses: actions/checkout@v4
 
-    - name: Clone Padavan 4.4 legacy (MI-R3P supported)
+    - name: Clone Padavan 4.4 (MI-R3P supported)
       run: |
-        git clone https://github.com/padavan-build/padavan-4.4-legacy.git padavan
+        git clone https://github.com/hanwckf/padavan-4.4.git padavan
         ls -al padavan/trunk/configs/templates
 
     - name: Copy zh-TW locale into Padavan source
@@ -29,7 +29,7 @@ jobs:
 
     - name: Clone toolchain
       run: |
-        git clone https://github.com/padavan-build/padavan-toolchain.git toolchain
+        git clone https://github.com/hanwckf/padavan-toolchain.git toolchain
 
     - name: Build firmware (MI-R3P, Linux 4.4)
       run: |
