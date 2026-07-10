@@ -1,1 +1,34 @@
+name: Build Padavan MI-R3P 099 zh-TW
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential gawk git gettext libncurses5-dev libssl-dev xsltproc libxml2-utils python3
+
+    - name: Clone toolchain
+      run: |
+        git clone https://github.com/hanwckf/padavan-toolchain.git toolchain
+
+    - name: Build firmware
+      run: |
+        export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
+        cd trunk
+        fakeroot ./build_firmware.sh MI-R3P_3.4.3.9-099.config
+
+    - name: Upload firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: MI-R3P_3.4.3.9-099_zh-TW
+        path: trunk/images/*.trx
 
