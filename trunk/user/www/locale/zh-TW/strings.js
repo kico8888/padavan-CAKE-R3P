@@ -59,6 +59,80 @@ var lang = {
   "log_viewer": "系統日誌",
   "time_settings": "時間設定",
   "timezone": "時區",
-  "ntp_server": "NTP 時間伺服器"
-};
+  "ntp_server": "NTP 時間伺服器",
 
+  /* ============================
+     以下為你要求的「完整擴充」
+     QoS / USB / VPN / 防火牆 / 進階設定 / 診斷工具
+     ============================ */
+
+  // QoS
+  "qos_enable": "啟用 QoS 流量管理",
+  "qos_mode": "QoS 模式",
+  "qos_rule_list": "流量規則列表",
+  "qos_priority": "優先權",
+  "qos_bandwidth_up": "上行頻寬限制",
+  "qos_bandwidth_down": "下行頻寬限制",
+  "qos_device": "裝置",
+  "qos_service": "服務類型",
+  "qos_apply_tip": "QoS 可改善網路壅塞時的使用體驗。請依需求設定優先權。",
+
+  // USB
+  "usb_storage": "USB 儲存裝置",
+  "usb_samba": "Samba 檔案分享",
+  "usb_ftp": "FTP 伺服器",
+  "usb_printer": "USB 印表機伺服器",
+  "usb_mount": "掛載點",
+  "usb_fs_type": "檔案系統類型",
+  "usb_samba_enable": "啟用 Samba 分享",
+  "usb_ftp_enable": "啟用 FTP 分享",
+  "usb_printer_enable": "啟用印表機伺服器",
+  "usb_access_user": "存取帳號",
+  "usb_access_pass": "存取密碼",
+  "usb_tip": "USB 功能可用於檔案分享或印表機共享。請確認裝置已正確插入。",
+
+  // VPN
+  "vpn_pptp": "PPTP VPN",
+  "vpn_l2tp": "L2TP VPN",
+  "vpn_ovpn": "OpenVPN 客戶端",
+  "vpn_server": "伺服器地址",
+  "vpn_username": "使用者名稱",
+  "vpn_password": "密碼",
+  "vpn_mppe": "MPPE 加密",
+  "vpn_enable": "啟用 VPN",
+  "vpn_status": "VPN 連線狀態",
+  "vpn_tip": "VPN 可建立安全的遠端連線。請依照服務提供者的設定填寫。",
+
+  // 防火牆
+  "fw_port_forward": "連接埠轉發",
+  "fw_external_port": "外部連接埠",
+  "fw_internal_port": "內部連接埠",
+  "fw_internal_ip": "內部 IP",
+  "fw_protocol": "協定",
+  "fw_dmz": "DMZ 主機",
+  "fw_dmz_enable": "啟用 DMZ",
+  "fw_mac_filter": "MAC 過濾",
+  "fw_mac_allow": "允許清單",
+  "fw_mac_deny": "拒絕清單",
+  "fw_tip": "防火牆可保護路由器免於外部攻擊。請謹慎設定 DMZ 與連接埠轉發。",
+
+  // 進階設定
+  "adv_nat": "NAT 設定",
+  "adv_nat_enable": "啟用 NAT",
+  "adv_static_route": "靜態路由",
+  "adv_ipv6": "IPv6 設定",
+  "adv_ipv6_enable": "啟用 IPv6",
+  "adv_mtu": "MTU 值",
+  "adv_vlan": "VLAN 設定",
+  "adv_tip": "進階設定適合熟悉網路架構的使用者。請謹慎修改。",
+
+  // 診斷工具
+  "diag_tools": "診斷工具",
+  "diag_ping": "Ping 測試",
+  "diag_traceroute": "路由追蹤",
+  "diag_arp": "ARP 表",
+  "diag_target": "目標地址",
+  "diag_start": "開始測試",
+  "diag_result": "測試結果",
+  "diag_tip": "診斷工具可協助確認網路連線是否正常。"
+};
