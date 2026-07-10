@@ -1,4 +1,4 @@
-name: Build Padavan MI-R3P 4.4 zh-TW
+name: Build Padavan MI-R3P 4.4 zh-TW (Local Builder)
 
 on:
   workflow_dispatch:
@@ -8,24 +8,36 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout your repo
+    - name: Checkout repo (host)
       uses: actions/checkout@v4
 
-    - name: Clone Padavan 4.4 Builder (修補版)
+    - name: Build Padavan inside Docker
       run: |
-        git clone https://github.com/hanwckf/padavan-4.4-builder.git padavan
+        docker build -t padavan-builder .
+        docker run --rm \
+          -v ${{ github.workspace }}:/workspace \
+          padavan-builder \
+          bash -c "
+            cd /workspace
 
-    - name: Copy zh-TW locale
-      run: |
-        mkdir -p padavan/trunk/user/www/locale/zh-TW/
-        cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
+            # Clone Padavan 4.4 原始碼（唯一還存在）
+            git clone https://github.com/hanwckf/padavan-4.4.git padavan
 
-    - name: Build firmware (MI-R3P)
-      run: |
-        cd padavan/trunk
-        fakeroot ./build_firmware MI-R3P
+            # 加入繁體語系
+            mkdir -p padavan/trunk/user/www/locale/zh-TW/
+            cp zh-TW/* padavan/trunk/user/www/locale/zh-TW/
 
-    - name: Upload firmware
+            # 建立本地工具鏈（不再 clone）
+            cd padavan/toolchain
+            ./clean_toolchain
+            ./build_toolchain
+
+            # 編譯 MI-R3P
+            cd ../trunk
+            fakeroot ./build_firmware MI-R3P
+          "
+
+    - name: Upload firmware (host)
       uses: actions/upload-artifact@v4
       with:
         name: MI-R3P_4.4_zh-TW
