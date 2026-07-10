@@ -8,9 +8,7 @@ RUN apt-get update && apt-get install -y \
     flex bison autoconf automake libtool pkg-config \
     gcc-4.8 g++-4.8
 
-# 使用 gcc-4.8（Padavan 4.4 完整相容）
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
 RUN update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
 
 WORKDIR /workspace
-
