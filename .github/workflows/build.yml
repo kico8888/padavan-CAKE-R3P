@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout your repo
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Clone Padavan 4.4 source (099 compatible)
       run: |
@@ -43,7 +43,7 @@ jobs:
         fakeroot ./build_firmware.sh MI-R3P_3.4.3.9-099.config
 
     - name: Upload firmware
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: MI-R3P_099_zh-TW
         path: padavan/trunk/images/*.trx
