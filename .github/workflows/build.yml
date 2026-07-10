@@ -37,7 +37,7 @@ jobs:
         export PATH=$PATH:$GITHUB_WORKSPACE/toolchain/bin
         cd padavan/trunk
         ls -al
-        fakeroot ./build_firmware.sh MI-R3P_3.4.3.9-099.config
+        fakeroot ./build_firmware MI-R3P_3.4.3.9-099.config
 
     - name: Upload firmware
       uses: actions/upload-artifact@v4
